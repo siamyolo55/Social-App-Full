@@ -1,0 +1,61 @@
+.mid-content {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin: 1rem;
+}
+
+.sidebar {
+  color: #130461;
+  font-size: 18px;
+  border: 2px solid lightblue;
+  height: calc(90vh);
+}
+
+#post-header {
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #130461;
+  margin-left: 13px;
+}
+
+#post-box {
+  height: 3.65rem;
+  width: 44.5%;
+  border: 0.2px sold lightblue;
+  margin-left: 13px;
+  border-radius: 0.5rem;
+}
+
+#post-submit {
+  height: 4.15rem;
+  width: 10%;
+  border: 0.5rem solid lightblue;
+  border-radius: 0.5rem;
+}
+
+.uldiv {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  width: 100%;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+li {
+  width: 80%;
+  height: 4rem;
+  border: 0.5px solid lightblue;
+  border-radius: 0.5rem;
+  font-size: 20px;
+  margin: 2.5rem;
+}
+
+.hvcenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+  font-family: "Poppins", sans-serif;
+}
