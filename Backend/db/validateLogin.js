@@ -18,6 +18,7 @@ const validateLogin = async (email,password) => {
     }
     catch(e){
         console.log(e)
+        return false
     }
 }
 

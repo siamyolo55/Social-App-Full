@@ -1,20 +1,17 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
 import Postbox from './Postbox'
 import Sidebar from '../layouts/Sidebar'
-import ProfileContent from './ProfileContent'
 import '../assets/mid-content.css'
 import '../assets/index.css'
 
-const MidContent = () => {
-    const location = useLocation()
+const MidContent = ({id,name, dp, about, friends, birthday, posts }) => {
     return (
         <div className='mid-content'>
             <div className='sidebar'>
-                <Sidebar />
+                <Sidebar friends={friends} birthday={birthday} />
             </div>
             <div className='content'>
-                {location.pathname === '/home' ? <Postbox /> : <ProfileContent /> }
+                <Postbox id={id} /> 
             </div>
             <div>
                 {/* add posts here */}

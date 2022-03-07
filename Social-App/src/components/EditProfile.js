@@ -1,19 +1,20 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Topbar from '../layouts/Topbar'
-import ProfileContent from './ProfileContent'
-import '../assets/app.css'
+import EditMidContent from './EditMidContent'
+import '../assets/mid-content.css'
 
-const Profile = () => {
+const EditProfile = () => {
     let location = useLocation()
     let data = location.state
-    document.title = data.name
+    document.title = 'Edit Profile'
+    console.log(data)
     return (
         <>
             <Topbar {...data} />
-            <ProfileContent {...data} />
+            <EditMidContent {...data} />
         </>
     )
 }
 
-export default Profile
+export default EditProfile

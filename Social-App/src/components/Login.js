@@ -9,16 +9,25 @@ const Login = () => {
     const [password,setPassword] = useState('')
     const [status,setStatus] = useState('')
     const navigate = useNavigate()
+    // to store data from request which will be sent to homepage with useNavigate/useLocation
+    let data
 
     const loginValidation = async() => {
         // return true when validated
-        let res = await axios.post('http://127.0.0.1:4000/login',{
-            email,
-            password
-        })
-        if(res.status === 201)
-            return true
-        return false
+        try{
+            let res = await axios.post('http://127.0.0.1:4000/login',{
+                email,
+                password
+            })
+            if(res.status === 201){
+                data = res.data.data
+                return true
+            }
+            return false
+        }
+        catch(e){
+            console.log(e)
+        }
     }
 
     const handleSubmit = (e) => {
@@ -29,7 +38,7 @@ const Login = () => {
             // send some sort of token
             // need useLocation hook to get email inside homepage
             setTimeout(() => {
-                navigate('/home',{ state: { email } })
+                navigate('/home',{ state: data })
             },2000)
             return
         }

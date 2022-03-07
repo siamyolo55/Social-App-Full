@@ -1,18 +1,19 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import Topbar from '../layouts/Topbar'
 import MidContent from './MidContent'
 import '../assets/app.css'
 import '../assets/index.css'
 
-const Home = (props) => {
+const Home = () => {
     document.title = 'Home'
-    //const [name,setName] = useState('Abrar')
-    const name = 'Abrar'
+    const location = useLocation()
+    const data = location.state
 
     return (
         <>
-            <Topbar name={name} />
-            <MidContent />
+            <Topbar  {...data} />
+            <MidContent {...data} />
         </>
     )
 }

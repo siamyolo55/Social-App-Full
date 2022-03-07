@@ -15,6 +15,7 @@ let uuid = () => {
         return v.toString(16);
     })
 }
+ // let img = https://i.pinimg.com/originals/02/94/93/029493e2dfc1a1a365424e14bca6595f.jpg
 
 const addUserTodDb = async (body) => {
     try{
@@ -22,7 +23,12 @@ const addUserTodDb = async (body) => {
             id: uuid(),
             name: body.name,
             email: body.email,
-            password: body.password
+            password: body.password,
+            dp:'',
+            about:'',
+            birthday:'',
+            friends: [],
+            posts: [],
         })
         await user.save()
     }

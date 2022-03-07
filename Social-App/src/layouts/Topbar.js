@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import '../assets/app.css'
 import '../assets/index.css'
 
-const Topbar = ({name}) => {
+const Topbar = ({id,name,email,password,dp,friends,posts,birthday,about}) => {
+    let data = {
+        id,name, about, dp, friends, birthday, posts
+    }
     return (
         <div className='topbar'>
             <div>
-                <Link to='/home' style={{textDecoration: 'none'}} >
+                <Link to='/home' state={data} style={{textDecoration: 'none'}} >
                     <button id='logo'>GENERIC SOCIAL APP</button>
                 </Link>
             </div>
@@ -16,7 +19,7 @@ const Topbar = ({name}) => {
             </div>
             <div className='topbar-right'> 
                 <button>
-                    <Link to='/profile' style={{textDecoration: 'none'}} >
+                    <Link to='/profile' state={{id,name,email,password,dp,friends,posts,birthday,about}} style={{textDecoration: 'none'}} >
                         {name}
                     </Link>
                 </button>

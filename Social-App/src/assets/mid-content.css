@@ -1,3 +1,8 @@
+.all-content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .mid-content {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -9,6 +14,41 @@
   font-size: 18px;
   border: 2px solid lightblue;
   height: calc(90vh);
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* single post */
+
+.post {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* ProfileContent.js */
+.avatar-content {
+  margin: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  height: 320px;
+}
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.about p {
+  font-size: 16px;
+}
+
+img {
+  width: 90%;
+  height: calc(315px);
+  border-radius: 1rem;
 }
 
 #post-header {
@@ -57,5 +97,38 @@ li {
   display: flex;
   justify-content: center;
   margin-top: 1.25rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.edit-but {
+  width: 80px;
+  height: 40px;
+  border-radius: 1em;
+  background-color: #004698;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* .edit-profile-form {
+} */
+.edit-form form {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 1rem;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+}
+
+#name,
+#email,
+#password,
+#repassword,
+#about,
+#birthday {
+  width: 60%;
+  height: 40px;
+  border-radius: 4px;
+  margin: 10px;
   font-family: "Poppins", sans-serif;
 }

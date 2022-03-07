@@ -9,7 +9,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/Data',{
 const getHomeData = async (email,password) => {
     try{
         const user = await User.find({email,password})
-        console.log(user)
+        return user[0]
     }
     catch(e){
         console.log(e)

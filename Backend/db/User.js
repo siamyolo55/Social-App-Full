@@ -8,7 +8,24 @@ const userSchema = new mongoose.Schema({
     dp: String, // link to photo
     about: String,
     birthday: String,
-    friends: Array
+    friends: [{ id : String}],
+    posts: [
+        {
+            uniq: String,
+            time: String,
+            by: String,
+            text: String,
+            likes: Number,
+            comments: [
+                {
+                    uniq: String,
+                    by: String,
+                    time: String,
+                    text: String
+                }
+            ]
+        }
+    ]
 })
 
 module.exports = mongoose.model("Users",userSchema)

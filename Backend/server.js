@@ -4,7 +4,10 @@ const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const addUserTodDb  = require('./db/addUserToDb')
-const { validateLogin, user } = require('./db/validateLogin')
+const validateLogin = require('./db/validateLogin')
+const getHomeData = require('./db/getHomeData')
+const updateUserData = require('./db/updateUserData')
+const submitPost = require('./db/submitPost')
 
 // uuid generator , move to other files later on
 
@@ -23,25 +26,39 @@ app.use(cors({ origin: "*" }))
 app.use(express.json({extended : true}))
 
 // login request
-app.post('/login', (req,res) => {
+app.post('/login', async (req,res) => {
     if(validateLogin(req.body.email, req.body.password)){
+        let data = await getHomeData(req.body.email,req.body.password)
         res.status(201).json({
-
+            data
         })
     }
 })
 
 // signup request
-app.post('/signup', (req,res) => {
+app.post('/signup', async (req,res) => {
     // send token on later versions
     // store to database
-    addUserTodDb(req.body)
+    await addUserTodDb(req.body)
 
     // send response
     res.status(201).json({ 
         name: req.body.name,
         email: req.body.email
     })
+})
+
+// update user data request
+app.put('/updateUserData', async (req,res) => {
+    await updateUserData(req.body)
+    res.status(201)
+    res.end()
+})
+
+app.post('/submitPost', async (req,res) => {
+    await submitPost(req.body)
+    res.status(201)
+    res.end()
 })
 
 
