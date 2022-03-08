@@ -26,7 +26,7 @@ const submitPost = async (data) => {
         }
         const user = await User.find({id:data.id})
         user[0].id = data.id
-        user[0].name =  data.name
+        user[0].name =  user[0].name
         user[0].email = user[0].email
         user[0].password = user[0].password
         user[0].about = user[0].about

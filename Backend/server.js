@@ -8,6 +8,8 @@ const validateLogin = require('./db/validateLogin')
 const getHomeData = require('./db/getHomeData')
 const updateUserData = require('./db/updateUserData')
 const submitPost = require('./db/submitPost')
+const getName = require('./db/getName')
+const getPosts = require('./db/getPosts')
 
 // uuid generator , move to other files later on
 
@@ -59,6 +61,20 @@ app.post('/submitPost', async (req,res) => {
     await submitPost(req.body)
     res.status(201)
     res.end()
+})
+
+app.post('/getName', async (req,res) => {
+    let name = await getName(req.body.by)
+    res.status(201).json({
+        name
+    })
+})
+
+app.post('/getUserPosts', async (req,res) => {
+    let posts = await getPosts(req.body.id)
+    res.status(201).json({
+        posts
+    })
 })
 
 

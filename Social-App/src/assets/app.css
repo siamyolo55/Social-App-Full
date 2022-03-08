@@ -44,6 +44,7 @@ form button {
   width: calc(100vw);
   height: calc(10vh);
   border: 0.5px solid lightblue;
+  position: fixed;
 }
 
 #logo {

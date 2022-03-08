@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../assets/mid-content.css'
 import axios from 'axios'
 
-const Postbox = ({id}) => {
+const Postbox = ({id,handleRerender}) => {
 
   const [post,setPost] = useState('')
   const submitPost = async () => {
@@ -11,6 +11,7 @@ const Postbox = ({id}) => {
     })
     if(res.status === 201){
       console.log('wrorked')
+      handleRerender()
     }
   }
 

@@ -1,6 +1,7 @@
 .all-content {
   display: grid;
   grid-template-columns: 1fr;
+  margin-top: 100px;
 }
 
 .mid-content {
@@ -19,6 +20,14 @@
 .posts {
   display: grid;
   grid-template-columns: 1fr;
+  font-family: "Poppins", sans-serif;
+  margin-top: -200px;
+  margin-left: 12px;
+  height: 100px;
+}
+
+.posts h3 {
+  font-size: 25px;
 }
 
 /* single post */
@@ -26,9 +35,42 @@
 .post {
   display: grid;
   grid-template-columns: 1fr;
+  border: 1px solid lightblue;
+  border-radius: 1rem;
+  width: 925px;
+}
+
+.post-content {
+  margin-left: 10px;
+}
+
+.post-content button {
+  height: 30px;
+  border-radius: 1rem;
+}
+
+.post p {
+  font-size: 18px;
+}
+
+.post-content input {
+  width: 80%;
+  height: 25px;
+  border-radius: 1rem;
+}
+
+.right-content {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 /* ProfileContent.js */
+
+.right-side {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .avatar-content {
   margin: 0.8rem;
   display: grid;
@@ -36,7 +78,9 @@
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   height: 320px;
+  height: calc(30vh);
 }
+
 .about {
   display: grid;
   grid-template-columns: 1fr;
